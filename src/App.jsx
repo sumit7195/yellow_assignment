@@ -1,42 +1,64 @@
 import { Component } from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import data from "./restaurant";
 
 class MapContainer extends Component {
   render() {
+    // console.log(data)
     return (
       <Map
         google={this.props.google}
-        style={{ width: "100%", height: "100%" }}
-        zoom={15}
-        initialCenter={{
-          lat: 28.70406,
-          lng: 77.102493,
-        }}
+        style={{ width: "100%", height: "100%", position: "relative" }}
+        className={"map"}
+        initialCenter={{ lat: "28.637684853299362", lng: 77.22033001796116 }}
+        zoom={14}
       >
         <Marker
-          title={"The marker`s title will appear as a tooltip."}
-          name={"SOMA"}
-          position={{ lat: 37.778519, lng: -122.40564 }}
+          title={"KFC"}
+          name={"KFC"}
+          position={{ lat: 28.637684853299362, lng: 77.22033001796116 }}
+        />
+
+        <Marker
+          title={"DOMINOS"}
+          name={"Domino"}
+          position={{ lat: 28.684366157901113, lng: 77.179132778077 }}
+        />
+
+        <Marker
+          title={"Haldiram"}
+          name={"Haldiram"}
+          position={{ lat: 28.63963672434897, lng: 77.22170405220163 }}
         />
         <Marker
-          name={"Dolores park"}
-          position={{ lat: 37.759703, lng: -122.428093 }}
+          title={"sagar ratna"}
+          name={"sagar ratna"}
+          position={{ lat: 28.704386617370506, lng: 77.17844687598588 }}
         />
-        <Marker />
         <Marker
-          name={"Your position"}
-          position={{ lat: 37.762391, lng: -122.439192 }}
-          icon={{
-            url: "/path/to/custom_icon.png",
-            anchor: new google.maps.Point(32, 32),
-            scaledSize: new google.maps.Size(64, 64),
-          }}
+          title={"Berger King"}
+          name={"Berger King"}
+          position={{ lat: 28.63963672434897, lng: 77.22170405220163 }}
+        />
+        <Marker
+          title={"Gansesh Restraunt"}
+          name={"Gansesh Restraunt"}
+          position={{ lat: 28.648758559016578, lng: 77.1927423680752 }}
+        />
+        <Marker
+          title={"Dhaba Junction"}
+          name={"Dhaba Junction"}
+          position={{ lat: 28.651817877389348, lng: 77.1825122109588 }}
+        />
+        <Marker
+          title={"Dhanding Chineese Restaurant"}
+          name={"Dhanding Chineese Restaurant"}
+          position={{ lat: 28.62954673879648, lng: 77.27353676622934 }}
         />
       </Map>
     );
   }
 }
-
 
 export default GoogleApiWrapper({
   apiKey: "AIzaSyBAFSt9FqAcn1dhusWnqR4mBMyG47xo-KY",
